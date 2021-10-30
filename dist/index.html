@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dist</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="data">
+            <div class="header">
+                <div class="logo">
+                    <h3>WeatherNow<sup> TM</sup></h3>
+                </div>
+                <div class="search-box">
+                    <label for="cityname"></label>
+                    <input type="text" id="cityname" class="search-field">
+                    <button class="search-button"><img class="search-logo" src="https://img.icons8.com/fluency-systems-filled/96/ffffff/search.png"/></button>
+                </div>
+            </div>
+            <div class="weather">
+                <div class="temprature-box">
+                    <div class="temprature">
+                        <h1 id="temprature">14</h1><sup> &#176</sup>
+                    </div>
+                    <div class="weather-text">
+                        <h1 id="weather-today">Today is a rainy day</h1>
+                        <div id="tip-today">Don't forget an Umbrella</div>
+                    </div>
+                </div>
+                <hr>
+                <div class="extras">
+                    <div class="date-and-time">
+                        <div class="date" id="date">Monday, 31 August 2021</div>
+                    </div>
+                    <div class="location">San Fransisco, USA</div>
+                </div>
+            </div>
+        </div>
+        <div class="userdata">
+            <div class="username-and-photo">
+                <div class="user-detail">
+                    <div class="name">David Domato</div>
+                    <div class="user-location">San Fransisco</div>
+                </div>
+                <div class="user-photo">
+                    <img class="user-image" src="https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111.jpg" alt="">
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="weather-details">
+                <div class="title name">Weather Details</div>
+                <div class="details">
+                    <div class="cloudy detail">
+                        <div class="detail-title">Cloudy</div>
+                        <div id="cloudy-value" class="value">68%</div>
+                    </div>
+                    <div class="humidity detail">
+                        <div class="detail-title">Humidity</div>
+                        <div id="humidity-value" class="value">68%</div>
+                    </div>
+                    <div class="wind detail">
+                        <div class="detail-title">Wind</div>
+                        <div id="wind-value" class="value">68%</div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <canvas id="myChart" width="400" height="400"></canvas>
+
+
+        </div>
+
+    </div>
+    <script src="main.bundle.js"></script>
+</body>
+
+</html>

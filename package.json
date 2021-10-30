@@ -1,0 +1,33 @@
+{
+    "name": "what-is-the-weather-now",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack",
+        "start": "webpack serve --open",
+        "watch": "webpack --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/data-pirate/what-is-the-weather-now.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/data-pirate/what-is-the-weather-now/issues"
+    },
+    "homepage": "https://github.com/data-pirate/what-is-the-weather-now#readme",
+    "devDependencies": {
+        "css-loader": "^6.5.0",
+        "style-loader": "^3.3.1",
+        "webpack": "^5.60.0",
+        "webpack-cli": "^4.9.1",
+        "webpack-dev-server": "^4.4.0"
+    },
+    "dependencies": {
+        "moment": "^2.29.1"
+    }
+}
