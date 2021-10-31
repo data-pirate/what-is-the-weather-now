@@ -16,12 +16,24 @@ const config = {
     type: 'line',
     data: data,
     options: {
+        plugins: {
+            filler: {
+                propagate: false,
+            },
+            title: {
+                display: true,
+                text: (ctx) => 'Fill: ' + ctx.chart.data.datasets[0].fill
+            }
+        },
+        interaction: {
+            intersect: false,
+        },
         scales: {
             y: {
                 beginAtZero: true
             }
         }
-    }
+    },
 };
 
 const myChart = new Chart(ctx, config);
@@ -36,8 +48,9 @@ export default async function get5DayForcast(city) {
     let count = 0;
     for (let each in response['list']) {
         if (response['list'][each]['dt_txt'] === `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate() <= 9 ? '0'+ d.getDate(): d.getDate()} ${todaysWeather}`) {
+            console.log(response['list'][each]);
             nextDays.push(days[d.getDay()].slice(0, 3));
-            nextDaysTemp.push(Math.round(response['list'][each]['main']['temp'] - 273.15));
+            nextDaysTemp.push(Math.round(response['list'][each]['main']['feels_like'] - 273.15));
             d.setDate(d.getDate() + 1);
             count++;
         }
@@ -49,9 +62,8 @@ export default async function get5DayForcast(city) {
 function addData(chart, label, data) {
     removeData(chart);
     chart.data.labels = label;
-    chart.data.datasets.forEach(dataset => {
-        dataset.data = data;
-    });
+    chart.data.datasets[0].data = data;
+    chart.options.elements.line.tension = 0.4;
     chart.update();
 }
 

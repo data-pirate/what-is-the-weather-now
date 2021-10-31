@@ -5,7 +5,6 @@ import getData from './getData.js';
 import get5DayForcast from "./graph.js";
 import updateWeatherData from "./userData.js";
 
-// console.log(new Date().getTime());
 
 
 let data = {
@@ -23,6 +22,7 @@ let data = {
     weather: "Today is a rainy day",
     tip: {
         clouds: "Don't forget an Umbrella",
+        rain: "Don't forget an Umbrella",
         mist: "Slow down and allow extra time to reach your destination",
         thunderstorm: "Stay inside and Watch some movies",
         drizzle: "Don't forget an Umbrella",
@@ -39,7 +39,6 @@ const extractInfo = (serverData, todaysWeather) => {
     data.location = `${serverData.city.name}, ${serverData.city.country}`;
     let weather = todaysWeather.weather[0].description;
     console.log(todaysWeather.weather[0].main);
-    // data.weather = `Today is a ${weather === 'Clear' ? weather: weather + 'y'} day`;
     data.weather = weather[0].toUpperCase() + weather.slice(1);
 }
 
@@ -98,13 +97,4 @@ document.querySelector(".container").addEventListener("click", (e) => {
         searchField.value = "";
         searchField.classList.remove("show-field")
     }
-})
-
-
-// async function fiveDayforcast() {
-//     let wData = await getData();
-
-//     console.log(wData['list'])
-// }
-
-// fiveDayforcast();
+});
